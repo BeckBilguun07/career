@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="mn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>POLAREX ACADEMY — CAREER EXPLORATION GUIDE</title>
+<style>
+:root{--bg:#f6f8fb;--fg:#0b1426;--mu:#44516a;--cd:#fff;--bd:#d3dbe8;--ac:#14609f;--go:#8a6410;--bt:#14609f;--bf:#fff;color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0a0f1c;--fg:#e8edf6;--mu:#a9b6cc;--cd:#131b2e;--bd:#2b3858;--ac:#7fc0ff;--go:#e3b64f;--bt:#7fc0ff;--bf:#0a0f1c;color-scheme:dark}}
+:root[data-theme=dark]{--bg:#0a0f1c;--fg:#e8edf6;--mu:#a9b6cc;--cd:#131b2e;--bd:#2b3858;--ac:#7fc0ff;--go:#e3b64f;--bt:#7fc0ff;--bf:#0a0f1c;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,"Segoe UI",Roboto,Arial,sans-serif}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+a{color:var(--ac)}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+header{position:sticky;top:0;z-index:20;background:#0b1426;color:#fff;display:flex;gap:12px;align-items:center;padding:8px 16px}
+header a{color:#fff;text-decoration:none}
+.brand{font-weight:700;letter-spacing:.08em;white-space:nowrap}
+nav{display:flex;gap:4px;overflow-x:auto;flex:1}
+nav a{padding:6px 10px;border-radius:6px;white-space:nowrap;font-size:15px}
+nav a:hover{background:#22304f}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:#e3b64f;z-index:30}
+main{max-width:980px;margin:0 auto;padding:0 16px}
+section{padding:56px 0 24px}
+h1{font-size:clamp(2rem,6vw,3.2rem);line-height:1.15;margin:.2em 0}
+h2{font-size:clamp(1.5rem,4vw,2rem);margin:0 0 .5em}
+h3{margin:1.2em 0 .4em}
+p,li{max-width:70ch}
+.hero{background:#0b1426;color:#fff;margin:0 -16px;padding:48px 16px 0;text-align:left}
+.hero p{color:#cdd8ea;font-size:1.15rem}
+.hero svg{display:block;width:100%;height:auto;margin-top:16px}
+.card{background:var(--cd);border:1px solid var(--bd);border-radius:10px;padding:16px}
+.gold{border-left:4px solid var(--go);padding-left:12px}
+button,.b{font:inherit;cursor:pointer;border-radius:8px;border:1px solid var(--bd);background:var(--cd);color:var(--fg);padding:8px 14px;min-height:40px}
+.pri{background:var(--bt);color:var(--bf);border-color:var(--bt)}
+input,select,textarea{font:inherit;background:var(--cd);color:var(--fg);border:1px solid var(--mu);border-radius:8px;padding:8px;max-width:100%}
+textarea{width:100%;min-height:90px;display:block}
+label{display:block;margin:10px 0 4px;font-weight:600}
+ol.road{counter-reset:s;list-style:none;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+ol.road li{counter-increment:s}
+ol.road a{display:block;text-decoration:none;color:var(--fg);padding:14px 14px 14px 56px;position:relative;min-height:60px}
+ol.road a:before{content:counter(s);position:absolute;left:14px;top:12px;width:30px;height:30px;border-radius:50%;background:var(--bt);color:var(--bf);display:grid;place-items:center;font-weight:700}
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin:12px 0}
+#grid{list-style:none;padding:0;margin:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+#grid li{background:var(--cd);border:1px solid var(--bd);border-top:5px solid var(--c);border-radius:10px;display:flex;flex-direction:column}
+#grid li.sel{outline:3px solid var(--go)}
+.open{border:0;background:none;text-align:left;padding:12px;flex:1;display:block;width:100%}
+.open b{display:block}
+.num{display:inline-block;background:var(--c);color:#fff;border-radius:6px;padding:0 8px;font-weight:700;font-size:14px}
+.pk{margin:0;padding:8px 12px;border-top:1px solid var(--bd);font-weight:400;display:flex;gap:8px;align-items:center}
+.pk input{width:20px;height:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;list-style:none}
+.chip{border-radius:20px;padding:4px 12px;min-height:0}
+dialog{width:min(760px,96vw);max-height:92vh;overflow:auto;background:var(--cd);color:var(--fg);border:1px solid var(--bd);border-radius:12px;padding:18px}
+dialog::backdrop{background:rgba(5,10,25,.7)}
+.mj{columns:2 240px;padding-left:20px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.tabs [aria-selected=true]{background:var(--bt);color:var(--bf)}
+table{border-collapse:collapse;width:100%;display:block;overflow-x:auto}
+th,td{border:1px solid var(--bd);padding:6px;text-align:left}
+td input,th input{width:100%;min-width:70px}
+details{margin:8px 0}
+summary{cursor:pointer;font-weight:600;padding:8px 0}
+.vals li{display:flex;gap:6px;align-items:center;margin:4px 0}
+.mut{color:var(--mu)}
+footer{padding:40px 16px;text-align:center;color:var(--mu)}
+@media print{header,#bar,button,.tools,.hero svg,nav,dialog{display:none!important}
+@page{size:A4;margin:15mm}
+body{background:#fff;color:#000;font-size:12pt}
+section{padding:8px 0;break-inside:avoid-page}
+.hero{background:#fff;color:#000}.hero p{color:#000}
+textarea{border:1px solid #000;min-height:35mm;background:#fff;color:#000;resize:none}
+details{display:block}details>*{display:block}
+.card{border-color:#000}#grid li{border-color:#000}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<header>
+<a class="brand" href="#top">POLAREX ACADEMY</a>
+<nav aria-label="Үндсэн цэс">
+<a href="#top">Нүүр</a><a href="#path">Зам</a><a href="#roadmap">Алхам</a><a href="#explorer">27 сонирхол</a><a href="#s4d">4D</a><a href="#tools">Тооцоолуур</a><a href="#ws">Дасгал</a><a href="#src">Эх сурвалж</a>
+</nav>
+<button id="th" aria-label="Гэрэлтэй/харанхуй харагдац солих">Харагдац</button>
+</header>
+<main id="top">
+<div class="hero">
+<h1>POLAREX ACADEMY — CAREER EXPLORATION GUIDE</h1>
+<p>Сонирхлоо нээ. Боломжуудаа судал. Ирээдүйгээ бүтээ.</p>
+<p>Энэ гарын авлага нь 9–12-р ангийн сурагчдад өөрийн сонирхол, чадвар, үнэт зүйлээ судалж, боломжит мэргэжлүүдийг танилцахад тусална. Энэ нь <b>тест биш</b>, мөн таныг юу болохыг тань хэлж өгөхгүй.</p>
+<svg viewBox="0 0 900 220" role="img" aria-label="Уулсын хормой дундуур өнхөрсөн зам, төгсгөлд нь жижиг алтан цэг">
+<polygon points="0,220 0,150 150,70 250,130 380,40 520,140 650,80 780,140 900,100 900,220" fill="#16233f"/>
+<polygon points="0,220 0,185 200,130 330,170 480,110 640,175 800,130 900,160 900,220" fill="#1d3156"/>
+<path d="M60 215 C220 190 80 160 260 150 S420 175 480 135 S620 120 700 95 S800 70 830 55" fill="none" stroke="#9fd0ff" stroke-width="3" stroke-dasharray="2 8" stroke-linecap="round"/>
+<circle cx="830" cy="55" r="7" fill="#e3b64f"/>
+</svg>
+</div>
+
+<section id="path">
+<h2>Бүгдийг нэг дор шийдсэн байх шаардлагагүй</h2>
+<p>Эргэлзэх нь хэвийн. Сонирхол цаг хугацаатай хамт өөрчлөгддөг. Сонгосон мэргэжил таны ажил мэргэжлийн бүх нарийн зүйлийг тодорхойлдоггүй. Хамгийн чухал нь судлан туршиж үзэх явдал юм.</p>
+<svg viewBox="0 0 700 170" role="img" aria-label="Шулуун хүлээгдэж буй зам ба мушгирсан бодит замын харьцуулалт" style="width:100%;max-width:700px">
+<text x="10" y="20" fill="currentColor" font-size="15">Хүлээгдэж буй зам</text>
+<line x1="10" y1="45" x2="690" y2="45" stroke="currentColor" stroke-width="2"/>
+<circle cx="690" cy="45" r="6" fill="#e3b64f"/>
+<text x="10" y="90" fill="currentColor" font-size="15">Бодит зам</text>
+<path d="M10 135 C100 80 140 170 230 125 S330 70 400 130 S520 160 560 110 S640 100 690 120" fill="none" stroke="currentColor" stroke-width="2.5"/>
+<circle cx="690" cy="120" r="6" fill="#e3b64f"/>
+</svg>
+</section>
+
+<section id="roadmap">
+<h2>Гарын авлагыг хэрхэн ашиглах вэ</h2>
+<ol class="road">
+<li class="card"><a href="#s4d">Өөрийгөө ойлгох</a></li>
+<li class="card"><a href="#explorer">Сонирхлоо судлах</a></li>
+<li class="card"><a href="#s4d">Давуу талаа тодорхойлох</a></li>
+<li class="card"><a href="#s4d">Мэргэжлүүдийг судлах</a></li>
+<li class="card"><a href="#tools">Сонголтуудаа туршиж үзэх</a></li>
+<li class="card"><a href="#ws">Мэдээлэлтэй шийдвэр гаргах</a></li>
+</ol>
+</section>
+
+<section id="explorer">
+<h2>27 сонирхлын судлагч (Interest Explorer)</h2>
+<p>Карт дээр дарж дэлгэрэнгүйг үзнэ үү. "Миний 3–5" нүдийг сонгоход доорх зураглал шинэчлэгдэнэ. Жагсаалтууд бүрэн бус бөгөөд "судлах боломжтой мэргэжил" гэсэн утгатай — "танд зөвлөж буй мэргэжил" биш.</p>
+<div class="tools">
+<div><label for="q">Хайх (чиглэл эсвэл мэргэжил)</label><input id="q" type="search"></div>
+<div><label for="gf">Бүлэг</label><select id="gf"></select></div>
+<span id="cnt" class="mut" aria-live="polite"></span>
+</div>
+<ul id="grid"></ul>
+<h3>Миний сонирхлын зураглал</h3>
+<div class="card" id="map" aria-live="polite"></div>
+</section>
+<dialog id="dlg" aria-label="Сонирхлын дэлгэрэнгүй"></dialog>
+
+<section id="s4d">
+<h2>4D загвар</h2>
+<p>Үндсэн загвар. Дөрвөн хэмжигдэхүүн нийлж <b>Мэдээлэлтэй шийдвэр</b> болно.</p>
+<svg viewBox="0 0 700 200" role="img" aria-label="Дөрвөн D нэг шийдвэр рүү нийлж буй диаграм" style="width:100%;max-width:700px">
+<g fill="none" stroke="currentColor" stroke-width="2"><circle cx="90" cy="100" r="55"/><circle cx="250" cy="100" r="55"/><path d="M145 100H195M305 100H345M345 100l-10-8M345 100l-10 8"/></g>
+<g fill="currentColor" font-size="14" text-anchor="middle"><text x="90" y="98">1 DESIRE</text><text x="90" y="116">Сонирхол</text><text x="250" y="98">2 DEVELOP</text><text x="250" y="116">Чадвар</text></g>
+<g fill="none" stroke="currentColor" stroke-width="2"><circle cx="410" cy="100" r="55"/><circle cx="570" cy="100" r="55"/></g>
+<g fill="currentColor" font-size="14" text-anchor="middle"><text x="410" y="98">3 DEMAND</text><text x="410" y="116">Эрэлт</text><text x="570" y="98">4 DIRECTION</text><text x="570" y="116">Зорилго</text></g>
+<rect x="190" y="172" width="320" height="26" rx="6" fill="none" stroke="#e3b64f" stroke-width="2.5"/>
+<text x="350" y="190" text-anchor="middle" fill="currentColor" font-size="14">Мэдээлэлтэй шийдвэр</text>
+</svg>
+<div class="tabs" role="tablist" aria-label="4D хэмжигдэхүүнүүд" id="tabs"></div>
+<div id="tp" class="card" role="tabpanel" tabindex="0"></div>
+<h3>Дүгнэлт: миний одоогийн хариулт</h3>
+<div class="card" id="syn"></div>
+<p class="gold">4D нь судалгааг чиглүүлдэг — нэг төгс мэргэжлийг гаргах томьёо биш.</p>
+</section>
+
+<section id="tools">
+<h2>Шийдвэрийн матриц (Decision Matrix)</h2>
+<p>2–3 мэргэжлээ харьцуулна уу. Жин (1–5) ба оноо (1–5) өөрчлөхөд нийлбэр шууд шинэчлэгдэнэ. Анхны тоонууд нь <b>жишээ — объектив үнэн биш</b>.</p>
+<div class="card" id="mx"></div>
+<p class="gold">Анхаар: тоо нь ард нь байгаа нотолгооноос илүү найдвартай харагдаж болохгүй. Оноо хувийн дүгнэлт мөн.</p>
+<h3>Үнэт зүйлсээ эрэмбэл (D4)</h3>
+<p>Бүх үнэт зүйлийг нэгэн зэрэг дээд түвшинд хангах боломжгүй. ↑ ↓ товчоор эрэмбэлнэ үү.</p>
+<ol class="vals card" id="vals"></ol>
+</section>
+
+<section id="ws">
+<h2>Дасгалын төв</h2>
+<p>Хариулт таны төхөөрөмжид хадгалагдана. Хувийн нууц мэдээлэл бичих албагүй.</p>
+<progress id="pg" max="100" value="0" aria-label="Нийт гүйцэтгэл" style="width:100%;max-width:400px"></progress> <span id="pgt"></span>
+<div class="tools"><button class="pri" id="ex">Хариултаа татах (Export)</button><button id="rs">Бүгдийг арилгах (Reset)</button><button id="pr">Хэвлэх</button></div>
+<div id="wsl"></div>
+</section>
+
+<section id="src">
+<h2>Тайлбар толь ба эх сурвалж</h2>
+<dl>
+<dt><b>Сонирхол (Interest)</b></dt><dd>Танд татагдаж, цаг гаргахад таатай санагддаг зүйл.</dd>
+<dt><b>Мэргэжил (Major)</b></dt><dd>Их сургуульд судалдаг эрдмийн чиглэл. Мэргэшлийн зэрэг/зөвшөөрөл (qualification) нь тусдаа ойлголт.</dd>
+<dt><b>Зөвшөөрөл (License)</b></dt><dd>Анагаах, шүдний, сувилахуй, эм зүй, мал эмнэлэг, эрх зүй, архитектур, зарим инженер, багш, зөвлөх зэрэг мэргэжил тусгай эрх шаарддаг.</dd>
+</dl>
+<p>27 чиглэл ба холбогдох мэргэжлүүдийн агуулга нь өгсөн <b>эх баримт бичгээс</b> авсан болно. Жагсаалтууд бүрэн бус. Тусгай зөвшөөрөл, тэтгэлэг, сургалтын төлбөрийг албан ёсны байгууллагаас шалгана уу. Энэ гарын авлага нь батлагдсан сэтгэл зүйн тест биш бөгөөд цалин, ажил эрхлэлтийн статистик агуулаагүй.</p>
+<p id="ver" class="mut"></p>
+</section>
+</main>
+<footer>POLAREX ACADEMY — Сонирхлоо нээ. Боломжуудаа судал. Ирээдүйгээ бүтээ.</footer>
+
+<script>
+const GROUPS=["Хүн ба нийгэм","Шинжлэх ухаан ба технологи","Бизнес ба удирдлага","Урлаг ба харилцаа","Байгаль ба орчин"];
+const COL=["#1d6fb8","#0f8a6d","#a8561c","#7b4fb5","#b0366b"];
+const G=[0,1,1,1,3,0,1,3,3,0,2,2,1,4,0,0,1,2,3,0,4,3,2,2,0,4,2];
+const EXP=[15,18,18,21,18,18,19,19,16,16,16,19,19,17,17,17,15,16,15,12,15,16,15,15,13,14,15];
+/* Source of truth: title|trait|majors separated by ; */
+const RAW=`Хүмүүсийг ойлгох, хүний зан төлөвийг сонирхох|Хүмүүс яагаад тодорхой байдлаар үйлдэл хийдэг, юу мэдэрдэг, хэрхэн шийдвэр гаргадаг талаар сонирхдог.|Сэтгэл судлал;Социологи;Хүний нөөцийн удирдлага;Зөвлөгөө өгөх үйлчилгээ;Нийгмийн ажил;Боловсрол судлал;Маркетинг;Олон нийттэй харилцах харилцаа (PR);Хүний хөгжил судлал;Антропологи;Байгууллагын сэтгэл судлал;Улс төр судлал;Олон улсын харилцаа;Хэрэглэгчийн туршлага судлал (UX Research);Зан төлөвийн эдийн засаг
+Математик, тоо, логик сэтгэлгээ|Тоо бодох, хэв маяг илрүүлэх, тооцоолол хийх, асуудлыг логикоор шийдэх дуртай.|Математик;Хэрэглээний математик;Статистик;Санхүү;Нягтлан бодох бүртгэл;Эдийн засаг;Актуарын шинжлэх ухаан;Өгөгдлийн шинжлэх ухаан (Data Science);Санхүүгийн инженерчлэл;Эконометрик;Бизнесийн аналитик;Үйл ажиллагааны судалгаа;Компьютерын шинжлэх ухаан;Банк, санхүү;Хөрөнгө оруулалтын шинжилгээ;Эрсдэлийн удирдлага;Нийлүүлэлтийн сүлжээний аналитик;Математикийн багш
+Физик, техник, аливаа зүйл хэрхэн ажилладгийг ойлгох|Машин механизм, хүч, хөдөлгөөн, эрчим хүч, технологийн зарчмыг ойлгох дуртай.|Физик;Механик инженерчлэл;Цахилгааны инженерчлэл;Барилгын инженерчлэл;Сансар, нисэхийн инженерчлэл;Роботын инженерчлэл;Мехатроник;Автомашины инженерчлэл;Электроникийн инженерчлэл;Сэргээгдэх эрчим хүчний инженерчлэл;Цөмийн инженерчлэл;Материал судлал;Химийн инженерчлэл;Үйлдвэрлэлийн инженерчлэл;Бүтээцийн инженерчлэл;Акустикийн инженерчлэл;Геофизик;Одон орон судлал
+Биологи, амьд бие, эрүүл мэнд|Хүний бие, амьтан, ургамал, өвчин, амьд организм хэрхэн ажилладгийг сонирхдог.|Хүний их эмч;Шүдний эмч;Сувилахуй;Эм зүй;Мал эмнэлэг;Биологи;Биотехнологи;Биохими;Микробиологи;Генетик;Мэдрэл судлал;Нийгмийн эрүүл мэнд;Хоол зүй, шим тэжээл судлал;Биоанагаахын шинжлэх ухаан;Биоанагаахын инженерчлэл;Экологи;Амьтан судлал;Ургамал судлал;Далайн биологи;Эпидемиологи;Физик эмчилгээ
+Хэл, харилцаа, үг яриа|Хэл сурах, бичих, ярих, санаагаа ойлгомжтой илэрхийлэх, өөр соёлын хүмүүстэй харилцах дуртай.|Англи хэл, уран зохиол;Хэл шинжлэл;Орчуулга, хэлмэрч;Олон улсын харилцаа;Сэтгүүл зүй;Харилцаа холбоо;Олон нийттэй харилцах харилцаа (PR);Эрх зүй;Дипломат алба;Уран зохиолын бичлэг;Хэвлэлийн редактор;Гадаад хэлний багш;Соёл судлал;Олон улсын бизнес;Улс төр судлал;Аялал жуулчлалын менежмент;Зар сурталчилгаа;Техникийн бичвэр
+Шүүмжлэлт сэтгэлгээ, мэтгэлцээн, асуудал шийдвэрлэх|Баримт шалгах, бусдын санааг эргэцүүлэх, асуудлын шалтгааныг олох, үндэслэлтэй дүгнэлт гаргах дуртай.|Эрх зүй;Философи;Эдийн засаг;Улс төр судлал;Төрийн бодлого судлал;Олон улсын харилцаа;Өгөгдлийн шинжилгээ;Судалгаа шинжилгээ;Түүх;Криминологи;Эрсдэлийн шинжилгээ;Стратегийн удирдлага;Эрэн сурвалжлах сэтгүүл зүй;Шүүх шинжилгээ;Танин мэдэхүйн шинжлэх ухаан;Бизнесийн зөвлөх үйлчилгээ;Шийдвэр гаргалтын шинжлэх ухаан;Аюулгүй байдал судлал
+Компьютер, технологи, дижитал систем|Код бичих, технологи бүтээх, компьютерын систем ойлгох, техникийн асуудал шийдвэрлэх сонирхолтой.|Компьютерын шинжлэх ухаан;Программ хангамжийн инженерчлэл;Хиймэл оюун ухаан;Машин сургалт;Кибер аюулгүй байдал;Мэдээллийн технологи;Мэдээллийн систем;Вэб хөгжүүлэлт;Тоглоом хөгжүүлэлт;Үүлэн тооцоолол;Компьютерын инженерчлэл;Өгөгдлийн инженерчлэл;Роботын инженерчлэл;Хүн-компьютерын харилцан үйлчлэл;UX/UI дизайн;Сүлжээний инженерчлэл;Өгөгдлийн сангийн удирдлага;Дижитал шүүх шинжилгээ;Биоинформатик
+Бүтээлч сэтгэлгээ, урлаг, дүрслэл|Шинэ санаа гаргах, зураг зурах, дизайн хийх, төсөөллөө бодит зүйл болгох дуртай.|График дизайн;Архитектур;Интерьер дизайн;Үйлдвэрлэлийн дизайн;Хувцас загвар;Анимэйшн;Зураасан зураг, иллюстраци;Дүрслэх урлаг;Кино үйлдвэрлэл;Гэрэл зураг;Тоглоомын дизайн;UX/UI дизайн;Хөдөлгөөнт график;Дижитал медиа;Зар сурталчилгааны бүтээлч чиглэл;Ландшафтын архитектур;Бүтээгдэхүүний дизайн;Урлагийн найруулга;Мультимедиа дизайн
+Хөгжим, дуу авиа, хэмнэл|Хөгжим тоглох, ая зохиох, хэмнэл мэдрэх, дуу авиа бүтээх сонирхолтой.|Хөгжмийн урлаг;Хөгжмийн зохиолч;Хөгжмийн продюсер;Хөгжмийн онол;Дууны инженерчлэл;Аудио технологи;Хөгжмийн багш;Хөгжмийн эмчилгээ;Киноны хөгжмийн зохиомж;Хөгжмийн бизнес;Тайзны урлаг;Жүжиг, мюзикл;Акустикийн инженерчлэл;Тоглоомын дууны дизайн;Хөгжим судлал;Урлагийн менежмент
+Спорт, хөдөлгөөн, биеийн гүйцэтгэл|Биеийн хөдөлгөөн, тэмцээн, багийн ажиллагаа, дасгал сургуулилт, амжилтаа ахиулах дуртай.|Спортын шинжлэх ухаан;Дасгал хөдөлгөөний шинжлэх ухаан;Биеийн тамир;Спортын менежмент;Физик эмчилгээ;Спортын дасгалжуулалт;Спортын сэтгэл судлал;Спортын анагаах ухаан;Хүч, бэлтгэлийн дасгалжуулалт;Спортын хоол зүй;Биомеханик;Спортын өгөгдлийн шинжилгээ;Кинезиологи;Спортын сэтгүүл зүй;Спортын арга хэмжээний менежмент;Нөхөн сэргээх шинжлэх ухаан
+Манлайлал, бусдыг зохион байгуулах, нөлөөлөх|Санаачилга гаргах, баг удирдах, шийдвэр гаргах, бусдыг урамшуулах дуртай.|Бизнесийн удирдлага;Менежмент;Энтрепренершип буюу бизнес эрхлэлт;Хүний нөөцийн удирдлага;Манлайлал судлал;Олон улсын бизнес;Улс төр судлал;Төрийн удирдлага;Төслийн менежмент;Маркетинг;Олон нийттэй харилцах харилцаа;Төрийн бус байгууллагын менежмент;Арга хэмжээний менежмент;Стратегийн удирдлага;Боловсролын удирдлага;Нийлүүлэлтийн сүлжээний менежмент
+Бизнес, мөнгө, зах зээл|Компани хэрхэн ажилладаг, хүмүүс хэрхэн худалдан авалт хийдэг, бизнес хэрхэн үнэ цэн бүтээдэг талаар сонирхдог.|Санхүү;Нягтлан бодох бүртгэл;Эдийн засаг;Бизнесийн удирдлага;Маркетинг;Бизнес эрхлэлт;Хөрөнгө оруулалтын менежмент;Банк;Олон улсын бизнес;Бизнесийн аналитик;Финтек буюу санхүүгийн технологи;Үл хөдлөх хөрөнгийн менежмент;Даатгал;Актуарын шинжлэх ухаан;Цахим худалдаа;Нийлүүлэлтийн сүлжээний менежмент;Бизнесийн зөвлөх үйлчилгээ;Борлуулалтын менежмент;Татвар
+Судалгаа, нээлт, шинэ мэдлэг|Асуултын хариуг өөрөө олох, баримт цуглуулах, туршилт хийх, шинэ зүйл нээх дуртай.|Шинжлэх ухааны судалгаа;Хими;Физик;Биологи;Одон орон судлал;Археологи;Антропологи;Түүх;Сэтгэл судлал;Социологи;Эдийн засаг;Улс төр судлал;Байгаль орчны шинжлэх ухаан;Геологи;Далай судлал;Мэдрэл судлал;Өгөгдлийн шинжлэх ухаан;Шүүх шинжилгээ;Зах зээлийн судалгаа
+Байгаль орчин, тогтвортой хөгжил|Байгаль хамгаалах, уур амьсгалын өөрчлөлт, амьтан ургамал, байгалийн нөөцийн талаар санаа тавьдаг.|Байгаль орчны шинжлэх ухаан;Байгаль орчны инженерчлэл;Экологи;Байгаль хамгааллын биологи;Ойн аж ахуй;Хөдөө аж ахуй;Агрономи;Сэргээгдэх эрчим хүч;Уур амьсгал судлал;Геологи;Ус судлал;Зэрлэг амьтан судлал;Тогтвортой хөгжлийн судалгаа;Байгаль орчны эдийн засаг;Байгаль орчны эрх зүй;Хот төлөвлөлт;Байгалийн нөөцийн менежмент
+Түүх, соёл, нийгэм|Хүн төрөлхтний түүх, соёл, улс орнуудын хөгжил, нийгмийн өөрчлөлтийг ойлгох дуртай.|Түүх;Археологи;Антропологи;Социологи;Улс төр судлал;Олон улсын харилцаа;Соёл судлал;Философи;Музей судлал;Соёлын өв хамгаалал;Газарзүй;Хот судлал;Төрийн бодлого судлал;Олон улсын хөгжлийн судалгаа;Хэл шинжлэл;Угсаатан судлал;Соёлын аялал жуулчлалын менежмент
+Бусдад туслах, амьдралд нь эерэг өөрчлөлт хийх|Бусдын асуудлыг шийдэх, эрүүл мэндийг нь сайжруулах, хөгжихөд нь туслах дуртай.|Анагаах ухаан;Сувилахуй;Сэтгэл судлал;Нийгмийн ажил;Боловсрол;Нийгмийн эрүүл мэнд;Шүдний эмч;Эм зүй;Физик эмчилгээ;Хөдөлмөр засал;Хоол зүй;Зөвлөгөө өгөх үйлчилгээ;Тусгай хэрэгцээт боловсрол;Олон нийтийн хөгжил;Нөхөн сэргээх шинжлэх ухаан;Эрүүл мэндийн байгууллагын удирдлага;Олон улсын хөгжил
+Юм бүтээх, засварлах, гараар ажиллах|Санаагаа бодит бүтээгдэхүүн болгох, юм угсрах, засах, турших дуртай.|Механик инженерчлэл;Барилгын инженерчлэл;Архитектур;Үйлдвэрлэлийн дизайн;Бүтээгдэхүүний дизайн;Цахилгааны инженерчлэл;Мехатроник;Роботын инженерчлэл;Барилгын менежмент;Үйлдвэрлэлийн инженерчлэл;Автомашины технологи;Нисэхийн инженерчлэл;Материалын инженерчлэл;Хөдөө аж ахуйн инженерчлэл;Үйлдвэрлэлийн технологи
+Төлөвлөлт, нарийвчлал, зохион байгуулалт|Аливаа зүйлийг эмх цэгцтэй болгох, төлөвлөгөө гаргах, хугацаа мөрдөх, алдааг илрүүлэх дуртай.|Нягтлан бодох бүртгэл;Төслийн менежмент;Үйл ажиллагааны менежмент;Нийлүүлэлтийн сүлжээний менежмент;Логистик;Бизнесийн удирдлага;Мэдээллийн систем;Статистик;Чанарын менежмент;Санхүүгийн төлөвлөлт;Арга хэмжээний менежмент;Барилгын менежмент;Өгөгдлийн аналитик;Үйлдвэрлэлийн инженерчлэл;Эрсдэл, нийцлийн удирдлага;Мэдээллийн сан, архивын менежмент
+Тайз, илтгэл, үзүүлбэр|Үзэгчдийн өмнө ярих, түүх өгүүлэх, жүжиглэх, хүмүүст санаа хүргэх дуртай.|Жүжиглэх урлаг;Театр судлал;Кино, телевизийн үйлдвэрлэл;Нэвтрүүлэг, хөтлөлт;Сэтгүүл зүй;Харилцаа холбоо;Олон нийттэй харилцах харилцаа;Маркетинг;Медиа үйлдвэрлэл;Тайзны урлаг;Дижитал контент үйлдвэрлэл;Илтгэх урлаг, харилцаа;Улс төрийн харилцаа;Спортын нэвтрүүлэг;Арга хэмжээний менежмент
+Хүний тархи, сэтгэхүй, суралцах үйл явц|Хүмүүс хэрхэн бодож, сурч, санаж, шийдвэр гаргаж, асуудал шийддэгийг сонирхдог.|Сэтгэл судлал;Мэдрэл судлал;Танин мэдэхүйн шинжлэх ухаан;Зан төлөвийн эдийн засаг;Хэл шинжлэл;Хиймэл оюун ухаан;Хүн-компьютерын харилцан үйлчлэл;Боловсрол судлал;Суралцахуйн шинжлэх ухаан;Нейросэтгэл судлал;UX судалгаа;Тооцооллын мэдрэл судлал
+Газарзүй, аялал, улс орон, орон зай|Газрын зураг, улс орнууд, хотууд, байгалийн тогтоц, аялал, газар нутгийн хөгжилд дуртай.|Газарзүй;Геологи;Хот төлөвлөлт;Архитектур;Олон улсын харилцаа;Аялал жуулчлалын менежмент;Газарзүйн мэдээллийн систем (GIS);Зураг зүй;Байгаль орчны шинжлэх ухаан;Тээврийн төлөвлөлт;Бүс нутгийн хөгжил;Олон улсын хөгжлийн судалгаа;Цаг уур судлал;Логистик;Археологи
+Бичих, өгүүлэмж бүтээх, санаагаа илэрхийлэх|Өгүүллэг бичих, санаагаа үгээр илэрхийлэх, мэдээлэл тайлбарлах, түүх бүтээх дуртай.|Уран зохиол;Сэтгүүл зүй;Кино зохиол бичих;Харилцаа холбоо;Хэл шинжлэл;Эрх зүй;Хэвлэл, редактор;Кино судлал;Зар сурталчилгаа;Контент стратеги;Техникийн бичвэр;Түүх;Философи;Дижитал медиа;Тоглоомын өгүүлэмж зохиох;Боловсрол
+Хэлэлцээр хийх, итгүүлэх, зөрчил шийдвэрлэх|Өөрийн санааг хамгаалах, бусдад нөлөөлөх, тохиролцоонд хүрэх, маргааныг шийдвэрлэх дуртай.|Эрх зүй;Дипломат алба;Олон улсын харилцаа;Бизнесийн удирдлага;Маркетинг;Борлуулалт;Хүний нөөцийн удирдлага;Олон нийттэй харилцах харилцаа;Улс төр судлал;Зөрчил зохицуулалт;Эвлэрүүлэн зуучлал;Хөдөлмөрийн харилцаа;Олон улсын бизнес;Төрийн бодлого;Үл хөдлөх хөрөнгийн бизнес
+Стратеги, өрсөлдөөн, урьдчилан тооцоолох|Шатрын нүүдэл шиг хэд хэдэн алхмын цаадах үр дүнг бодох, төлөвлөх, хамгийн оновчтой шийдлийг олох дуртай.|Эдийн засаг;Санхүү;Бизнесийн стратеги;Менежмент;Компьютерын шинжлэх ухаан;Тоглоомын дизайн;Үйл ажиллагааны судалгаа;Өгөгдлийн шинжлэх ухаан;Математик;Улс төр судлал;Актуарын шинжлэх ухаан;Нийлүүлэлтийн сүлжээний менежмент;Спортын аналитик;Шийдвэр гаргалтын шинжлэх ухаан;Бизнес эрхлэлт
+Заах, тайлбарлах, бусдыг хөгжүүлэх|Бусдад мэдлэгээ хуваалцах, хүнд ойлгомжгүй зүйлийг энгийнээр тайлбарлах дуртай.|Боловсрол судлал;Багш;Боловсролын сэтгэл судлал;Математикийн багш;Байгалийн ухааны багш;Хэлний багш;Тусгай хэрэгцээт боловсрол;Сургалтын хөтөлбөр боловсруулах;Суралцахуйн шинжлэх ухаан;Боловсролын технологи;Байгууллагын сургалт, хөгжил;Сургалтын зөвлөх;Боловсролын удирдлага
+Хот, орон сууц, нийгмийн орчныг хөгжүүлэх|Хот, зам, барилга, нийтийн орон зайг илүү тухтай, үр ашигтай болгох талаар боддог.|Хот төлөвлөлт;Архитектур;Барилгын инженерчлэл;Ландшафтын архитектур;Төрийн удирдлага;Социологи;Газарзүй;Байгаль орчны инженерчлэл;Тээврийн төлөвлөлт;Үл хөдлөх хөрөнгийн хөгжил;Хотын дизайн;Төрийн бодлого;Орон нутгийн хөгжил;Тогтвортой хөгжил
+Шинэ санаа гаргах, шинийг санаачлах|Аливаа зүйлийг сайжруулах, шинэ бүтээгдэхүүн бүтээх, асуудлыг өөр аргаар шийдэх дуртай.|Бизнес эрхлэлт;Бүтээгдэхүүний дизайн;Бүтээгдэхүүний менежмент;Компьютерын шинжлэх ухаан;Инженерчлэл;Бизнесийн инновац;Маркетинг;Үйлдвэрлэлийн дизайн;Биотехнологи;Хиймэл оюун ухаан;Финтек;Инновацын менежмент;Технологийн менежмент;Дизайн сэтгэлгээ;Бизнесийн аналитик`;
+const CATS=RAW.trim().split("\n").map((l,i)=>{const [t,s,m]=l.split("|");return{n:i+1,t,s,m:m.split(";"),g:G[i]}});
+
+const DIM=[
+["D1","Сонирхол (Desire)","Юу таныг үнэхээр татдаг вэ? Жинхэнэ сонирхол, түр зуурын урам, бусдын дарамтыг ялгаж үзнэ.",["Энэ нь сүүлийн 6 сард давтагдсан уу?","Үр дүнгээс гадна үйл явц нь таалагддаг уу?","Хэн нэгэн хүлээж байгаа учраас сонирхож байна уу?"],"Сонирхлын эрэмбэ (1–5) ба тус бүр нь жинхэнэ / түр зуурын / нийгмийн дарамт аль нь вэ?"],
+["D2","Хөгжүүлж болох чадвар (Development)","Одоогийн чадвар, төрөлхийн хандлага, сурсан чадвар, боломж, тогтвортой дадлага шаардах чадварыг ялгана. Энэ нь шинжлэх ухаанаар батлагдсан хэмжүүр БИШ — зөвхөн өөрийн дүгнэлт.",["Одоо юуг сайн хийдэг вэ?","Юуг сурахад бэрх ч хичээх хүсэлтэй вэ?","Хэн танд эргэх холбоо өгч чадах вэ?"],"Одоогийн давуу тал ба хөгжүүлэх чадвар (итгэлийн түвшин, сурах хүсэл 1–5)."],
+["D3","Ажлын байрны эрэлт, боломж (Demand)","Эрэлт ба хувийн тохирол өөр зүйл. Мэргэжлийн үүрэг, өдөр тутмын ажил, шаардлагатай боловсрол, элсэлтийн нөхцөл, ур чадвар, ажлын орчин, дотоод/гадаад, зардал, салбарын өөрчлөлтийг судална. Эх сурвалжаа шалгана: хэн бичсэн, хэзээ, ямар зорилгоор, баталгаажуулж болох уу?",["Энэ мэргэжлийн хүн өдөр бүр юу хийдэг вэ?","Миний мэдээлэл хэр шинэ, найдвартай вэ?","Ямар тусгай зөвшөөрөл хэрэгтэй вэ?"],"Судалж буй нэг мэргэжлийн тэмдэглэл: үүрэг, шаардлага, зардал, эх сурвалж."],
+["D4","Хүсэж буй ирээдүй, зорилго (Direction)","Таны үнэт зүйл ба хүсэж буй амьдрал. Бүх зүйлийг нэгэн зэрэг дээд түвшинд хангах боломжгүй, тиймээс буулт хийх зүйлээ нэрлэнэ.",["Таны хувьд 5 жилийн дараа сайн өдөр ямар байх вэ?","Юуг нь золиослоход бэлэн вэ?","Хаана амьдарч, суралцахыг хүсэж байна вэ?"],"Миний гол 3 үнэт зүйл ба хийх буулт."]];
+const VALS=["Бие даасан байдал","Бүтээлч байдал","Тогтвортой байдал","Орлого","Нийгэмд хувь нэмэр","Оюуны сорилт","Уян хатан байдал","Манлайлал","Өөр газар амьдрах/суралцах"];
+const WS=[
+["1. Миний тэргүүн таван сонирхол",["5 сонирхлоо эрэмбэлж, тус бүр яагаад татдгийг бич."]],
+["2. Давуу тал ба хөгжүүлэх ур чадвар",["Одоо сайн байгаа 3 ур чадвар","Хөгжүүлэхийг хүсэж буй 3 ур чадвар"]],
+["3. Үнэт зүйл ба ирээдүйн тэргүүлэх зүйл",["Хамгийн чухал 3 үнэт зүйл","Ямар буулт хийхэд бэлэн вэ?"]],
+["4. Боломжит гурван мэргэжил",["Мэргэжил 1 ба яагаад","Мэргэжил 2 ба яагаад","Мэргэжил 3 ба яагаад"]],
+["5. Мэргэжил судлах жагсаалт",["Үүрэг, өдөр тутмын ажил","Шаардлагатай боловсрол, элсэлт, ур чадвар","Ажлын орчин, дотоод/гадаад, зардал, салбарын өөрчлөлт"]],
+["6. Мэргэжил харьцуулах матриц",["Дээрх тооцоолуурын үр дүн ба миний дүгнэлт"]],
+["7. Гурван боломжит ирээдүй",["Зам А: хамгийн тодорхой зам","Зам Б: өөр сонголт","Зам В: хэрэв миний таамаглал өөрчлөгдвөл"]],
+["8. Оюутан/төгсөгчөөс асуух асуултууд",["Миний бэлтгэсэн 5 асуулт"]],
+["9. Нэг долоо хоногийн судалгааны төлөвлөгөө",["Энэ долоо хоногт хийх 3 алхам"]],
+["10. 30 өдрийн замын зураглал",["1–10, 11–20, 21–30 өдрүүдэд хийх зүйл"]],
+["11. Эцсийн эргэцүүлэл",["Би юуг мэдэж байна?","Би юуг мэдэхгүй байна?","Би юуг судлах вэ?"]]];
+const REG=/эмч|Сувилахуй|Эм зүй|Мал эмнэлэг|Эрх зүй|Архитектур|багш|Багш|Зөвлөгөө өгөх|Физик эмчилгээ|Анагаах/;
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const K="polarex-guide-v1";
+const defMx=()=>({n:["Эдийн засаг","Бизнесийн аналитик","Менежмент"],r:[["Сонирхол",5,[4,5,3]],["Чадвар, суралцах хүсэл",4,[3,4,4]],["Хөтөлбөрт тохирох байдал",3,[4,4,3]],["Карьерийн боломж",3,[4,4,4]],["Зардал, хүртээмж",2,[3,3,4]],["Үнэт зүйлд нийцэх байдал",4,[4,4,3]]].map(a=>({c:a[0],w:a[1],s:a[2]}))});
+let S={done:{},ans:{},pick:[],vals:VALS.slice(),mx:defMx()};
+try{const r=JSON.parse(localStorage.getItem(K));if(r&&typeof r==="object")S=Object.assign(S,r)}catch(e){}
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}};
+
+/* theme */
+(function(){try{const t=localStorage.getItem(K+"-t");if(t)document.documentElement.dataset.theme=t}catch(e){}})();
+$("#th").onclick=()=>{const d=document.documentElement,cur=d.dataset.theme||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"),n=cur==="dark"?"light":"dark";d.dataset.theme=n;try{localStorage.setItem(K+"-t",n)}catch(e){}};
+addEventListener("scroll",()=>{const h=document.documentElement;$("#bar").style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight||1)*100)+"%"},{passive:true});
+
+/* icons (geometric, number-paired) */
+const ic=(n,c)=>{const k=3+n%6,p=[];for(let i=0;i<k;i++){const a=i*6.283/k-1.57;p.push((16+12*Math.cos(a)).toFixed(1)+","+(16+12*Math.sin(a)).toFixed(1))}return `<svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" style="color:${c}"><polygon points="${p.join(" ")}" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="16" r="${2+n%4}" fill="currentColor"/></svg>`};
+
+/* explorer */
+$("#gf").innerHTML='<option value="">Бүгд</option>'+GROUPS.map((g,i)=>`<option value="${i}">${g}</option>`).join("");
+function grid(){
+ const q=$("#q").value.trim().toLowerCase(),g=$("#gf").value;
+ const list=CATS.filter(c=>(g===""||c.g==+g)&&(!q||(c.n+" "+c.t+" "+c.m.join(" ")).toLowerCase().includes(q)));
+ $("#cnt").textContent=list.length+" / 27 чиглэл";
+ $("#grid").innerHTML=list.map(c=>`<li style="--c:${COL[c.g]}" class="${S.pick.includes(c.n)?"sel":""}"><button class="open" data-o="${c.n}" aria-label="${c.n}. ${esc(c.t)} — дэлгэрэнгүй">${ic(c.n,COL[c.g])}<span class="num">${c.n}</span> <small class="mut">${GROUPS[c.g]}</small><b>${esc(c.t)}</b></button><label class="pk"><input type="checkbox" data-pk="${c.n}" ${S.pick.includes(c.n)?"checked":""}> Миний 3–5</label></li>`).join("")||"<li class='card'>Илэрц олдсонгүй. Өөр үгээр хайна уу.</li>";
+}
+function map(){
+ if(!S.pick.length){$("#map").innerHTML="<p>3–5 карт сонгоход энд зураглал гарна.</p>";return}
+ const cnt={};S.pick.forEach(n=>CATS[n-1].m.forEach(m=>(cnt[m]=cnt[m]||[]).push(n)));
+ const ov=Object.entries(cnt).filter(e=>e[1].length>1).sort((a,b)=>b[1].length-a[1].length);
+ $("#map").innerHTML=`<p><b>Сонгосон (${S.pick.length}/5):</b> ${S.pick.map(n=>`${n}. ${esc(CATS[n-1].t)}`).join("; ")}</p>`+(S.pick.length<3?`<p class="mut">Дор хаяж 3-ыг сонгоно уу.</p>`:"")+`<h4>Хэд хэдэн чиглэлд давтагдсан мэргэжил (судлах боломжтой — зөвлөмж биш)</h4>`+(ov.length?`<ul>${ov.map(e=>`<li>${esc(e[0])} — чиглэл ${e[1].join(", ")}</li>`).join("")}</ul>`:"<p>Давхцал олдсонгүй.</p>");
+}
+let cur=1;
+function open(n){
+ cur=n;const c=CATS[n-1],col=COL[c.g];
+ const rel=CATS.filter(x=>x.n!==n).map(x=>[x,x.m.filter(m=>c.m.includes(m)).length]).filter(a=>a[1]>0).sort((a,b)=>b[1]-a[1]).slice(0,4);
+ $("#dlg").innerHTML=`<div class="tools"><button data-go="-1" aria-label="Өмнөх">← Өмнөх</button><button data-go="1" aria-label="Дараах">Дараах →</button><button data-close class="pri">Хаах</button></div>
+ <h2>${ic(n,col)} <span class="num" style="--c:${col}">${n}</span> ${esc(c.t)}</h2>
+ <p><b>Чамд тохирох шинж:</b> ${esc(c.s)}</p>
+ <h3>Энэ сонирхол юу гэсэн үг вэ?</h3><p>Энэ нь та энэ чиглэлд татагдаж байгааг илтгэнэ. Энэ нь тухайн чиглэлд амжилт гарна гэсэн баталгаа биш — судалж эхлэх цэг юм.</p>
+ <h3>Өөрөөсөө асуух асуултууд</h3><ul><li>Энэ чиглэлийн ямар үйл ажиллагаа надад хамгийн их таалагддаг вэ?</li><li>Үүнийг хийхэд цаг мартагддаг уу?</li><li>Энэ чиглэлийн хэцүү талыг хүлээж авахад бэлэн үү?</li><li>Хэн нэгний хүлээлтээс болж биш, өөрөө сонирхож байна уу?</li></ul>
+ <h3>Холбогдох мэргэжлүүд (эх баримтаас, ${c.m.length})</h3><ul class="mj">${c.m.map(m=>`<li>${esc(m)}</li>`).join("")}</ul>
+ <p class="mut">Жагсаалт бүрэн бус. Эдгээр нь "судлах боломжтой мэргэжил" — танд "зөвлөсөн мэргэжил" биш. Эрдмийн чиглэл (academic subject) ба мэргэжлийн эрх (professional qualification) нь өөр зүйл.</p>
+ ${c.m.some(m=>REG.test(m))?`<p class="gold">Зарим мэргэжил (анагаах, шүдний, сувилахуй, эм зүй, мал эмнэлэг, эрх зүй, архитектур, багш, зөвлөх зэрэг) тусгай зөвшөөрөл, мэргэшил шаарддаг. Албан ёсны байгууллагаас шалгана уу.</p>`:""}
+ <h3>Холбоотой сонирхлууд</h3><ul class="chips">${rel.map(a=>`<li><button class="chip" data-o="${a[0].n}">${a[0].n}. ${esc(a[0].t)}</button></li>`).join("")}</ul>
+ <h3>7 хоногт хийх нэг алхам</h3><label style="font-weight:400"><input type="checkbox" data-done="${n}" ${S.done[n]?"checked":""}> Энэ чиглэлийн нэг мэргэжлээс сонгож, түүний ажлыг тайлбарласан нэг найдвартай эх сурвалж уншаад 3 зүйлээ тэмдэглэсэн. (Хийсэн)</label>`;
+ if(!$("#dlg").open)$("#dlg").showModal();
+}
+$("#dlg").addEventListener("keydown",e=>{if(/INPUT|TEXTAREA/.test(e.target.tagName))return;if(e.key==="ArrowRight")open(cur%27+1);if(e.key==="ArrowLeft")open((cur+25)%27+1)});
+$("#q").oninput=grid;$("#gf").onchange=grid;
+
+/* 4D */
+let tab=0;
+function tabs(){
+ $("#tabs").innerHTML=DIM.map((d,i)=>`<button role="tab" aria-selected="${i===tab}" data-t="${i}">${d[0]} ${d[1].split(" (")[0]}</button>`).join("");
+ const d=DIM[tab];
+ $("#tp").innerHTML=`<h3 style="margin-top:0">${d[1]}</h3><p>${d[2]}</p><ul>${d[3].map(q=>`<li>${q}</li>`).join("")}</ul>${fld("d"+tab,d[4],5)}`;
+ $("#syn").innerHTML=DIM.map((d,i)=>fld("syn"+i,d[1].split(" (")[0]+" → миний одоогийн хариулт",2)).join("");
+}
+function fld(k,l,r){return `<label for="f-${k}">${l}</label><textarea id="f-${k}" data-k="${k}" rows="${r}">${esc(S.ans[k])}</textarea>`}
+$("#tabs").addEventListener("click",e=>{const b=e.target.closest("[data-t]");if(b){tab=+b.dataset.t;tabs();$("#tabs [aria-selected=true]").focus()}});
+
+/* values */
+function vals(){$("#vals").innerHTML=S.vals.map((v,i)=>`<li><button data-v="${i},-1" aria-label="${esc(v)} дээш">↑</button><button data-v="${i},1" aria-label="${esc(v)} доош">↓</button> ${i+1}. ${esc(v)}</li>`).join("")}
+$("#vals").addEventListener("click",e=>{const b=e.target.closest("[data-v]");if(!b)return;const[i,d]=b.dataset.v.split(",").map(Number),j=i+d;if(j<0||j>=S.vals.length)return;[S.vals[i],S.vals[j]]=[S.vals[j],S.vals[i]];save();vals();const nb=$(`#vals [data-v="${j},${d}"]`);if(nb)nb.focus()});
+
+/* matrix */
+function mx(){const m=S.mx;$("#mx").innerHTML=`<table><thead><tr><th>Шалгуур</th><th>Жин 1–5</th>${m.n.map((x,j)=>`<th><input aria-label="Мэргэжил ${j+1}" data-mn="${j}" value="${esc(x)}"></th>`).join("")}</tr></thead><tbody>${m.r.map((r,i)=>`<tr><td>${esc(r.c)}</td><td><input type="number" min="1" max="5" data-mw="${i}" value="${r.w}" aria-label="Жин: ${esc(r.c)}"></td>${r.s.map((v,j)=>`<td><input type="number" min="1" max="5" data-ms="${i},${j}" value="${v}" aria-label="${esc(r.c)}, мэргэжил ${j+1}"></td>`).join("")}</tr>`).join("")}</tbody><tfoot><tr><th colspan="2">Жигнэсэн нийлбэр</th>${m.n.map((x,j)=>`<th id="mt${j}"></th>`).join("")}</tr></tfoot></table>`;mxT()}
+function mxT(){const m=S.mx,max=m.r.reduce((a,r)=>a+r.w*5,0);m.n.forEach((_,j)=>{$("#mt"+j).textContent=m.r.reduce((a,r)=>a+r.w*r.s[j],0)+" / "+max})}
+const cl=v=>Math.min(5,Math.max(1,Math.round(+v)||1));
+
+/* worksheets */
+function ws(){$("#wsl").innerHTML=WS.map((w,i)=>`<details class="card"><summary>${esc(w[0])}</summary>${w[1].map((p,j)=>fld(`w${i}_${j}`,p,4)).join("")}</details>`).join("");prog()}
+function prog(){const ks=[];WS.forEach((w,i)=>w[1].forEach((_,j)=>ks.push(`w${i}_${j}`)));const f=ks.filter(k=>(S.ans[k]||"").trim()).length,p=Math.round(f/ks.length*100);$("#pg").value=p;$("#pgt").textContent=p+"% ("+f+"/"+ks.length+")"}
+
+/* events */
+document.addEventListener("click",e=>{
+ const o=e.target.closest("[data-o]");if(o)return open(+o.dataset.o);
+ const g=e.target.closest("[data-go]");if(g)return open((cur-1+ +g.dataset.go+27)%27+1);
+ if(e.target.closest("[data-close]"))$("#dlg").close();
+});
+document.addEventListener("change",e=>{
+ const t=e.target;
+ if(t.dataset.pk){const n=+t.dataset.pk;if(t.checked){if(S.pick.length>=5){t.checked=false;$("#cnt").textContent="Дээд тал нь 5 чиглэл сонгоно.";return}S.pick.push(n)}else S.pick=S.pick.filter(x=>x!==n);save();t.closest("li").classList.toggle("sel",t.checked);map()}
+ if(t.dataset.done){S.done[t.dataset.done]=t.checked;save()}
+});
+document.addEventListener("input",e=>{
+ const t=e.target,d=t.dataset;
+ if(d.k){S.ans[d.k]=t.value;save();prog()}
+ else if(d.mn!==undefined){S.mx.n[+d.mn]=t.value;save()}
+ else if(d.mw!==undefined){S.mx.r[+d.mw].w=cl(t.value);save();mxT()}
+ else if(d.ms!==undefined){const[i,j]=d.ms.split(",").map(Number);S.mx.r[i].s[j]=cl(t.value);save();mxT()}
+});
+$("#ex").onclick=()=>{
+ const out={guide:"POLAREX ACADEMY — CAREER EXPLORATION GUIDE",selectedInterests:S.pick.map(n=>n+". "+CATS[n-1].t),actionsDone:Object.keys(S.done).filter(k=>S.done[k]).map(Number),values:S.vals,matrix:S.mx,answers:S.ans};
+ const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(out,null,2)],{type:"application/json"}));a.download="polarex-my-answers.json";document.body.appendChild(a);a.click();a.remove();
+};
+$("#rs").onclick=()=>{if(!confirm("Бүх хадгалсан хариултыг арилгах уу?"))return;S={done:{},ans:{},pick:[],vals:VALS.slice(),mx:defMx()};try{localStorage.removeItem(K)}catch(e){}grid();map();tabs();vals();mx();ws()};
+$("#pr").onclick=()=>{document.querySelectorAll("details").forEach(d=>d.open=true);print()};
+
+/* verification */
+const bad=CATS.map((c,i)=>c.m.length===EXP[i]?null:c.n).filter(Boolean);
+const tot=CATS.reduce((a,c)=>a+c.m.length,0);
+$("#ver").textContent=`Шалгалт: ${CATS.length}/27 чиглэл, нийт ${tot} мэргэжил (${bad.length?"таарахгүй чиглэл: "+bad.join(", "):"эх баримтын тоотой таарсан"}). Чиглэл тус бүрийн тоо: ${CATS.map(c=>c.m.length).join(", ")}.`;
+console.assert(CATS.length===27&&!bad.length,"Data mismatch");
+
+grid();map();tabs();vals();mx();ws();
+</script>
+</body>
+</html>
